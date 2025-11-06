@@ -55,45 +55,45 @@ It is expressed as:
 
 ##  Code 
 ```scilab
-lambda = 0.03; 
-sigma = 1;     
 
-Pt_vals = 0.1:0.1:10;   
-Gt_const = 30;           
-Pm_const = 1e-13;        
-
-Rmax_Pt = ((Pt_vals .* Gt_const.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_const)).^(1/4);
-
-Gt_vals = 1:1:50;        
-Pt_const = 1;            
-Pm_const = 1e-13;
-
-Rmax_Gt = ((Pt_const .* Gt_vals.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_const)).^(1/4);
-Pm_vals = logspace(-15, -10, 50); 
-Pt_const = 1;
-Gt_const = 30;
-
-Rmax_Pm = ((Pt_const .* Gt_const.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_vals)).^(1/4);   
+Gr = 25;               
+lm = 0.03;              
+sigma = 5;             
+pmin = 1e-12;          
+Gt = 30;       
+Pt = 1:10:5000;
+Rmax1 = (((Pt .* Gt .* Gr .* (lm.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
 
 subplot(3,1,1);
-plot(Pt_vals, Rmax_Pt, 'r', 'LineWidth', 2);
+plot(Pt, Rmax1);
+
+
+Pt = 2000;           
+Gt = 1:1:60;           
+Rmax2 = (((Pt .* Gt .* Gr .* (lm.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
 
 subplot(3,1,2);
-plot(Gt_vals, Rmax_Gt, 'g', 'LineWidth', 2);
+plot(Gt, Rmax2);
+
+Gt = 30;
+pmin = logspace(-15, -9, 200);   
+Rmax3 = (((Pt .* Gt .* Gr .* (lm.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
 
 subplot(3,1,3);
-plot(Pm_vals, Rmax_Pm, 'b', 'LineWidth', 2);
+plot(pmin, Rmax3);
 
 ```
 
 ## Output
 
-![WhatsApp Image 2025-10-23 at 10 40 04_f60e2206](https://github.com/user-attachments/assets/ebba5549-56a5-4dd4-97cb-9eca2eb7a1b1)
+<img width="757" height="721" alt="image" src="https://github.com/user-attachments/assets/5143c5b6-45f5-4bfa-a74e-948acf0861c8" />
+
 
 
 ## Manual Calculation
 
-![WhatsApp Image 2025-10-23 at 10 42 07_86afe3da](https://github.com/user-attachments/assets/676cebe1-7c2f-4c49-b0e9-9d5dcf2f8fbc)
+![WhatsApp Image 2025-11-06 at 10 06 34_4f9d309a](https://github.com/user-attachments/assets/39f3ddca-35f8-409c-af55-429a60271611)
+
 
 
 ## Result
