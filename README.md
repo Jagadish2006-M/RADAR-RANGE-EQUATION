@@ -90,7 +90,7 @@ plot(pmin, Rmax3);
 
 ## Manual Calculation
 
-![Radar Range Observation](https://github.com/user-attachments/assets/ca47fe28-ce5f-411f-b2ce-a8cb655572a9)
+![Radar Range Observation corrected ](https://github.com/user-attachments/assets/fa14955c-d700-4755-ac5d-387bbdd75901)
 
 
 
