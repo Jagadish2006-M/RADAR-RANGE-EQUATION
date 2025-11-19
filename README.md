@@ -62,7 +62,7 @@ sigma = 6;
 pmin = 1e-10;
 Gt = 9;
 Pt = 0.5:0.5:100;   
-Rmax1 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
+Rmax1 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^3) .* pmin))).^(1/4);
 subplot(3,1,1);
 plot(Pt, Rmax1);
 
