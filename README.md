@@ -68,13 +68,13 @@ plot(Pt, Rmax1);
 
 Pt = 10;
 Gt = 0.1:0.1:9;     
-Rmax2 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
+Rmax2 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^3) .* pmin))).^(1/4);
 subplot(3,1,2);
 plot(Gt, Rmax2);
 
 Gt = 8;
 pmin = 1e-14:1e-13:1e-9;  
-Rmax3 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^2) .* pmin))).^(1/4);
+Rmax3 = (((Pt .* Gt .* Gr .* (w.^2) .* sigma) ./ (((4 * %pi).^3) .* pmin))).^(1/4);
 subplot(3,1,3);
 plot(pmin, Rmax3);
 
